@@ -20,3 +20,56 @@
 git clone https://github.com/IlyaTrihkin/astra-backup.git
 cd astra-backup
 chmod +x backup.sh
+```
+
+---
+
+## Запуск вручную
+
+```bash
+sudo ./backup.sh
+```
+
+---
+
+## Настройка cron
+
+```bash
+crontab -e
+# Добавить строку для ежедневного запуска в 2:00:
+0 2 * * * /root/astra-backup/backup.sh
+```
+
+---
+
+## ⚙️ Настройка
+
+Переменные в начале скрипта:
+
+| Переменная | Описание |
+|----------|----------|
+| `BACKUP_DIR` | Папка для хранения бэкапов |
+| `SOURCE_DIRS` | Список директорий для архивации |
+| `RETENTION_DAYS` | Сколько дней хранить бэкапы |
+| `LOG_FILE` | Путь к лог-файлу |
+
+---
+
+## 👤 Автор
+
+Илья Тришкин — специалист по информационной безопасности.
+
+#### GitHub: 
+https://github.com/IlyaTrihkin
+
+#### TenChat: 
+https://tenchat.ru/ilya_trishkin
+
+#### Habr: 
+https://habr.com/ru/users/ilya_trishkin
+
+---
+
+## 📄 Лицензия
+
+Этот проект распространяется под лицензией MIT. Подробнее см. [LICENSE](LICENSE).
